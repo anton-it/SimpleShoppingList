@@ -1,5 +1,6 @@
 package com.ak87.simpleshoppinglist.presentation
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.ak87.simpleshoppinglist.R
 import com.ak87.simpleshoppinglist.domain.ShopItem
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         viewModel.shopList.observe(this) {
             Log.d("MainActivity", it.toString())
             shopListAdapter.submitList(it)
+
+            val buttonAddItem = findViewById<FloatingActionButton>(R.id.button_add_shop_item)
+            buttonAddItem.setOnClickListener {
+                val intent = ShopItemActivity.newIntentAddItem(this)
+                startActivity(intent)
+            }
 
         }
     }
@@ -47,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         }
         setupLongClickListener()
         setupClickListener()
-        //удаление свайпом
+        //Delete swipe
         setupSwipeListener(rvShopList)
     }
 
@@ -77,6 +85,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupClickListener() {
         shopListAdapter.onShopItemClickListener = {
             Log.d("MainActivity", it.toString())
+            val intent = ShopItemActivity.newIntentEditItem(this, it.id)
+            startActivity(intent)
         }
     }
 

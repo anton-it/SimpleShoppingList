@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,6 +33,7 @@ class ShopItemFragment() : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
+        Log.d("FragmentLife", "onAttach")
         if (context is OnEditingFinishedListener) {
             onEditingFinishedListener = context
         } else {
@@ -41,6 +43,7 @@ class ShopItemFragment() : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.d("FragmentLife", "onCreate")
         parsParams()
     }
 
@@ -49,17 +52,56 @@ class ShopItemFragment() : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("FragmentLife", "onCreateView")
         return inflater.inflate(R.layout.fragment_shop_item, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("FragmentLife", "onViewCreated")
         viewModel = ViewModelProvider(this)[ShopItemViewModel::class.java]
         initViews(view)
         addTextChangeListeners()
         launchRightMode()
         observeViewModel()
     }
+    ////////////////////////////////////////////////
+    override fun onStart() {
+        super.onStart()
+        Log.d("FragmentLife", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d("FragmentLife", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d("FragmentLife", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d("FragmentLife", "onStop")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Log.d("FragmentLife", "onDestroyView")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d("FragmentLife", "onDestroy")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Log.d("FragmentLife", "onDetach")
+    }
+
+    ///////////////////////////////////////////////
 
     private fun observeViewModel() {
         viewModel.errorInputCount.observe(viewLifecycleOwner) {

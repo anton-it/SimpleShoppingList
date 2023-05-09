@@ -33,17 +33,15 @@ class MainActivity : AppCompatActivity(), ShopItemFragment.OnEditingFinishedList
         viewModel.shopList.observe(this) {
             Log.d("MainActivity", it.toString())
             shopListAdapter.submitList(it)
-
-            val buttonAddItem = findViewById<FloatingActionButton>(R.id.button_add_shop_item)
-            buttonAddItem.setOnClickListener {
-                if (isOnePaneMode()) {
-                    val intent = ShopItemActivity.newIntentAddItem(this)
-                    startActivity(intent)
-                } else {
-                    launchFragment(ShopItemFragment.newInstanceAddItem())
-                }
+        }
+        val buttonAddItem = findViewById<FloatingActionButton>(R.id.button_add_shop_item)
+        buttonAddItem.setOnClickListener {
+            if (isOnePaneMode()) {
+                val intent = ShopItemActivity.newIntentAddItem(this)
+                startActivity(intent)
+            } else {
+                launchFragment(ShopItemFragment.newInstanceAddItem())
             }
-
         }
     }
 

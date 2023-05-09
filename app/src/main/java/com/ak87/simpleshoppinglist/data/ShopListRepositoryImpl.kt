@@ -2,7 +2,6 @@ package com.ak87.simpleshoppinglist.data
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import com.ak87.simpleshoppinglist.domain.ShopItem
 import com.ak87.simpleshoppinglist.domain.ShopListRepository
@@ -26,6 +25,13 @@ class ShopListRepositoryImpl(
 //            addShopItem(item)
 //        }
 //    }
+
+        init {
+        for (i in 0 until 10) {
+            val item = ShopItem("Name $i", i, Random.nextBoolean())
+            addShopItem(item)
+        }
+    }
 
     override fun addShopItem(shopItem: ShopItem) {
         shopListDao.addShopItem(mapper.mapEntityToDbModel(shopItem))

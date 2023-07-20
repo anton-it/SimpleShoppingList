@@ -18,7 +18,7 @@
 ## Прочее:
 
 ## SimpleShoppingLis
-![](https://ibb.co/WFgxK30) ![](https://ibb.co/BNYZzKf)
-![](https://ibb.co/jDc19QM)  
+![](https://i.ibb.co/pZJ0XPQ/Screen1.jpg) ![](https://i.ibb.co/5FJ8Mx1/Screen2.jpg)
+![](https://i.ibb.co/SBh9DMn/Screen3.jpg)  
 
 

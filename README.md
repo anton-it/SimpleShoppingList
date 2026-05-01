@@ -8,9 +8,10 @@
 ## Использованные технологии:
 1. Язык - Kotlin
 2. Архитектура - MVVM.
-3. Хранение данных – Room
-4. Асинхронная работа - Kotlin Coroutins.
-5. Dependency injection - Dagger 2
+3. UI - XML
+4. Хранение данных – Room
+5. Асинхронная работа - Kotlin Coroutins.
+6. Dependency injection - Dagger 2
 
 ## Использованные API:
 1. Работа с сетью в данном приложении не реализована

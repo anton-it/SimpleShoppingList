@@ -20,7 +20,7 @@
 https://www.rustore.ru/catalog/app/com.example.simpleshoppinglist3
 
 ## SimpleShoppingLis
-![](https://i.ibb.co/pZJ0XPQ/Screen1.jp) ![](https://i.ibb.co/5FJ8Mx1/Screen2.jpg) ![](https://i.ibb.co/SBh9DMn/Screen3.jpg)  
+![](https://i.ibb.co/pZJ0XPQ/Screen1.jpg) ![](https://i.ibb.co/5FJ8Mx1/Screen2.jpg) ![](https://i.ibb.co/SBh9DMn/Screen3.jpg)  
 
 
 
